@@ -60,6 +60,20 @@ func main() {
 		},
 	}
 
+	// Initialization of the fileProcessor channel
+	fileProcessor := make(chan FileData)
+	fileScanResult := &FileScanResult{
+		TotalFiles: 0,
+		FileList:   make([]FileData, 0),
+	}
+
+	go func() {
+		for fileData := range fileProcessor {
+			fileScanResult.TotalFiles++
+			fileScanResult.FileList = append(fileScanResult.FileList, fileData)
+		}
+	}()
+
 	fmt.Println("Gathering host info...")
 	sysInfo.getHostInfo(*debug, errorLog)
 
