@@ -7,7 +7,7 @@ require github.com/shirou/gopsutil/v3 v3.23.3
 require (
 	github.com/shoenig/go-m1cpu v0.1.5 // indirect
 	github.com/spf13/afero v1.9.5 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/text v0.9.0 // indirect
 )
 
 require (
